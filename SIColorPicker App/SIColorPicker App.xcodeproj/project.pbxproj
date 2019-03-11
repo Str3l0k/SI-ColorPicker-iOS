@@ -12,7 +12,25 @@
 		967748D722366AB500559033 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967748D522366AB500559033 /* Main.storyboard */; };
 		967748D922366AB600559033 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967748D822366AB600559033 /* Assets.xcassets */; };
 		967748DC22366AB600559033 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967748DA22366AB600559033 /* LaunchScreen.storyboard */; };
+		967749232236E37700559033 /* SIColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9677491A2236E1D800559033 /* SIColorPicker.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		967749192236E1D800559033 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 967749152236E1D800559033 /* SIColorPicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9694838F223517A500C9C792;
+			remoteInfo = SIColorPicker;
+		};
+		967749202236E2D100559033 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 967749152236E1D800559033 /* SIColorPicker.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9694838E223517A500C9C792;
+			remoteInfo = SIColorPicker;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		967748CE22366AB500559033 /* SIColorPicker App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SIColorPicker App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +40,7 @@
 		967748D822366AB600559033 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		967748DB22366AB600559033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		967748DD22366AB600559033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		967749152236E1D800559033 /* SIColorPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SIColorPicker.xcodeproj; path = ../SIColorPicker/SIColorPicker.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967749232236E37700559033 /* SIColorPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +60,7 @@
 			children = (
 				967748D022366AB500559033 /* SIColorPicker App */,
 				967748CF22366AB500559033 /* Products */,
+				967748ED2236D70E00559033 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +85,22 @@
 			path = "SIColorPicker App";
 			sourceTree = "<group>";
 		};
+		967748ED2236D70E00559033 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				967749152236E1D800559033 /* SIColorPicker.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		967749162236E1D800559033 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9677491A2236E1D800559033 /* SIColorPicker.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +115,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				967749212236E2D100559033 /* PBXTargetDependency */,
 			);
 			name = "SIColorPicker App";
 			productName = "SIColorPicker App";
@@ -110,12 +148,28 @@
 			mainGroup = 967748C522366AB400559033;
 			productRefGroup = 967748CF22366AB500559033 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 967749162236E1D800559033 /* Products */;
+					ProjectRef = 967749152236E1D800559033 /* SIColorPicker.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				967748CD22366AB400559033 /* SIColorPicker App */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9677491A2236E1D800559033 /* SIColorPicker.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SIColorPicker.framework;
+			remoteRef = 967749192236E1D800559033 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		967748CC22366AB400559033 /* Resources */ = {
@@ -141,6 +195,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		967749212236E2D100559033 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SIColorPicker;
+			targetProxy = 967749202236E2D100559033 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		967748D522366AB500559033 /* Main.storyboard */ = {
@@ -289,7 +351,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.sevn.SIColorPicker-App";
+				PRODUCT_BUNDLE_IDENTIFIER = de.sevn.sicolorpickerapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,7 +369,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.sevn.SIColorPicker-App";
+				PRODUCT_BUNDLE_IDENTIFIER = de.sevn.sicolorpickerapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

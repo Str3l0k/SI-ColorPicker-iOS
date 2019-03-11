@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import SIColorPicker
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var containerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let colorPickerStoryboard = UIStoryboard(name: "ColorPicker", bundle: nil)
+        let colorPickerViewController = colorPickerStoryboard.instantiateInitialViewController()
+        
+        containerView.addSubview(colorPickerViewController!.view)
     }
-
-
 }
 
