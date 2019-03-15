@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		961671E9223813FB00D15424 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 961671E8223813FB00D15424 /* Assets.xcassets */; };
 		967748E82236D65F00559033 /* ColorPickerTouchProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967748E32236D65F00559033 /* ColorPickerTouchProcessor.swift */; };
 		967748E92236D65F00559033 /* ColorPickerViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967748E42236D65F00559033 /* ColorPickerViewConfiguration.swift */; };
 		967748EA2236D65F00559033 /* ColorPickerViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967748E52236D65F00559033 /* ColorPickerViewLayout.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		961671E8223813FB00D15424 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		967748E32236D65F00559033 /* ColorPickerTouchProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerTouchProcessor.swift; sourceTree = "<group>"; };
 		967748E42236D65F00559033 /* ColorPickerViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewConfiguration.swift; sourceTree = "<group>"; };
 		967748E52236D65F00559033 /* ColorPickerViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewLayout.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				9694839B223517DA00C9C792 /* res */,
 				96948392223517A500C9C792 /* SIColorPicker.h */,
 				96948393223517A500C9C792 /* Info.plist */,
+				961671E8223813FB00D15424 /* Assets.xcassets */,
 			);
 			path = SIColorPicker;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961671E9223813FB00D15424 /* Assets.xcassets in Resources */,
 				967748F12236D74A00559033 /* ColorPicker.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

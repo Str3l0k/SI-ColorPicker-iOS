@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let colorPickerStoryboard = UIStoryboard(name: "ColorPicker", bundle: nil)
+        let colorPickerStoryboard = UIStoryboard(name: "ColorPicker", bundle: Bundle(for: ColorPickerViewController.self))
         let colorPickerViewController = colorPickerStoryboard.instantiateInitialViewController()
         
         containerView.addSubview(colorPickerViewController!.view)

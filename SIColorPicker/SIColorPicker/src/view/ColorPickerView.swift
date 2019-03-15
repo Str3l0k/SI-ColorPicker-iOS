@@ -23,7 +23,9 @@ class ColorPickerView: UIView {
     internal var magnificationImage = UIImageView(image: UIImage(named: "test"))
     
     // MARK: color selection circle
-    internal var colorGradientImageView = UIImageView(image: UIImage(named: "hsv_radial_gradient"))
+    internal var colorGradientImageView = UIImageView(image: UIImage(named: "hsv_radial_gradient",
+                                                                     in: Bundle(for: ColorPickerViewController.self),
+                                                                     compatibleWith: nil))
     internal var colorSelectionThumbView = UIView()
     internal var colorSelectionThumbColorLayer = CAShapeLayer()
     

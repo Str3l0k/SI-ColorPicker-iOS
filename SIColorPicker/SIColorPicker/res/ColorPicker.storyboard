@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9py-MZ-684">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RLj-3u-LfD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,34 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="peT-Fb-mbT">
-            <objects>
-                <navigationController id="9py-MZ-684" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="KHX-Hq-2aS">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.0" green="0.44705882349999998" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="RLj-3u-LfD" kind="relationship" relationship="rootViewController" id="r0X-gB-lkf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ycg-t5-zms" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-744" y="-338"/>
-        </scene>
-        <!--Pick a color-->
+        <!--ColorPickerViewController-->
         <scene sceneID="JIn-dV-qUZ">
             <objects>
-                <viewController id="RLj-3u-LfD" customClass="ColorPickerViewController" customModule="SIColorPicker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ColorPickerViewController" id="RLj-3u-LfD" customClass="ColorPickerViewController" customModule="SIColorPicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z3v-Ye-MXf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1e-79-rui" customClass="ColorPickerView" customModule="SIColorPicker" customModuleProvider="target">
-                                <rect key="frame" x="32" y="73.5" width="311" height="404"/>
+                                <rect key="frame" x="32" y="141.5" width="311" height="404"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="v1e-79-rui" secondAttribute="height" multiplier="1:1.3" id="WgT-fW-se9"/>
@@ -48,8 +30,18 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSp-SZ-axs">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8r9-5h-5u2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="#FFFFFF" borderStyle="roundedRect" placeholder="color code" textAlignment="center" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="zsd-lh-juk">
-                                <rect key="frame" x="157.5" y="297.5" width="60" height="20"/>
+                                <rect key="frame" x="157.5" y="355.5" width="60" height="20"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="csh-6q-boS"/>
@@ -60,8 +52,9 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="hexColorCodeChanged:" destination="RLj-3u-LfD" eventType="editingChanged" id="eSs-tV-WGP"/>
-                                    <action selector="hexColorCodeEnd:" destination="RLj-3u-LfD" eventType="editingDidEnd" id="97Q-fk-Hiq"/>
-                                    <action selector="hexColorCodeEnd:" destination="RLj-3u-LfD" eventType="editingDidEndOnExit" id="Ufn-N6-mS6"/>
+                                    <action selector="hexColorCodeEditBegin:" destination="RLj-3u-LfD" eventType="editingDidBegin" id="lwR-8X-PAx"/>
+                                    <action selector="hexColorCodeEditEnd:" destination="RLj-3u-LfD" eventType="editingDidEnd" id="97Q-fk-Hiq"/>
+                                    <action selector="hexColorCodeEditEnd:" destination="RLj-3u-LfD" eventType="editingDidEndOnExit" id="Ufn-N6-mS6"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -69,9 +62,13 @@
                         <color key="tintColor" red="1" green="0.6705882353" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="zsd-lh-juk" firstAttribute="centerX" secondItem="v1e-79-rui" secondAttribute="centerX" id="3XQ-0X-nzz"/>
+                            <constraint firstItem="QSp-SZ-axs" firstAttribute="top" secondItem="7gE-ab-FVX" secondAttribute="top" id="9v8-Xk-Yg8"/>
                             <constraint firstItem="v1e-79-rui" firstAttribute="centerY" secondItem="7gE-ab-FVX" secondAttribute="centerY" id="BNE-mz-lUN"/>
                             <constraint firstItem="v1e-79-rui" firstAttribute="leading" secondItem="7gE-ab-FVX" secondAttribute="leading" constant="32" id="CCb-AK-3Lz"/>
+                            <constraint firstItem="7gE-ab-FVX" firstAttribute="bottom" secondItem="QSp-SZ-axs" secondAttribute="bottom" id="bXL-VB-okg"/>
+                            <constraint firstItem="7gE-ab-FVX" firstAttribute="trailing" secondItem="QSp-SZ-axs" secondAttribute="trailing" id="ivm-ko-lMp"/>
                             <constraint firstItem="7gE-ab-FVX" firstAttribute="trailing" secondItem="v1e-79-rui" secondAttribute="trailing" constant="32" id="kNJ-ML-PbS"/>
+                            <constraint firstItem="QSp-SZ-axs" firstAttribute="leading" secondItem="7gE-ab-FVX" secondAttribute="leading" id="oQO-a4-toM"/>
                             <constraint firstItem="zsd-lh-juk" firstAttribute="centerY" secondItem="z3v-Ye-MXf" secondAttribute="centerY" constant="32" id="oof-UX-C4V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7gE-ab-FVX"/>
@@ -89,6 +86,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="blurView" destination="QSp-SZ-axs" id="eLu-m9-90I"/>
                         <outlet property="colorHexTextField" destination="zsd-lh-juk" id="ms0-2i-94H"/>
                         <outlet property="colorPickerView" destination="v1e-79-rui" id="2p1-9B-eCK"/>
                         <outlet property="textFieldYConstraint" destination="oof-UX-C4V" id="GPI-9X-2Z7"/>
