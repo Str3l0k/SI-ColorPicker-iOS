@@ -88,10 +88,7 @@ public class ColorPickerViewController: UIViewController {
     
     @IBAction func hexColorCodeEditBegin(_ sender: UITextField) {
         print("Hex code change begin")
-        UIView.animate(withDuration: 0.25) {
-//            sender.contentScaleFactor *= 2
-//            sender.transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
-        }
+        sender.becomeFirstResponder()
     }
 }
 
@@ -135,7 +132,8 @@ extension ColorPickerViewController {
         
         let values = colorText.split(by: 2)
         let colorValues = values.map { (value) -> CGFloat in
-            return CGFloat(Int(value, radix: 16)! % 256) / 255
+            let validValue = Int(value, radix: 16) ?? 255
+            return CGFloat(validValue % 256) / 255
         }
         
         let newColor = UIColor(red: colorValues[0], green: colorValues[1], blue: colorValues[2], alpha: 1)
@@ -151,22 +149,31 @@ extension ColorPickerViewController {
 // MARK: - keyboard behaviour
 extension ColorPickerViewController {
     override func keyboardWillOpen(rect: CGRect) {
-        let keyboardTop = view.bounds.height - rect.height
         let scale: CGFloat = 2.15
         let scaledHeight = colorHexTextField.bounds.height * scale
-        let newY = keyboardTop - colorHexTextField.center.y - scaledHeight / 2 - 8
+        
+        let keyboardTop = view.bounds.height - rect.height
+        let textFieldBottom = colorHexTextField.center.y + scaledHeight / 2
+        
+        var deltaY: CGFloat = 0.0
+        
+        if (textFieldBottom > keyboardTop) {
+            deltaY = keyboardTop - colorHexTextField.center.y - scaledHeight / 2 - 8
+        } else {
+            deltaY = keyboardTop - colorHexTextField.center.y - scaledHeight / 2 - 8
+        }
         
         blurView.backgroundColor = colorPickerView.color
         blurView.isHidden = false
 
         UIView.animate(withDuration: 0.25, animations: { [unowned self] in
             let scaleTransform = CGAffineTransform(scaleX: scale, y: scale)
-            let translateTransform = CGAffineTransform(translationX: 0, y: -newY)
+            let translateTransform = CGAffineTransform(translationX: 0, y: deltaY)
             
-            self.blurView.alpha = 0.5
+            self.blurView.alpha = 0.6
             self.colorHexTextField.transform = scaleTransform.concatenating(translateTransform)
         }, completion: { _ in
-            self.textFieldYConstraint.constant = self.colorHexTextField.center.y - self.view.bounds.centerY
+//            self.textFieldYConstraint.constant = self.colorHexTextField.center.y - self.view.bounds.centerY
         })
     }
     
@@ -176,7 +183,7 @@ extension ColorPickerViewController {
             self.colorHexTextField.transform = CGAffineTransform.identity
             }, completion: { _ in
                 self.blurView.isHidden = true
-                self.textFieldYConstraint.constant = 32
+//                self.textFieldYConstraint.constant = 32
         })
     }
 }

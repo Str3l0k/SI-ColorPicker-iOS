@@ -41,14 +41,14 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="#FFFFFF" borderStyle="roundedRect" placeholder="color code" textAlignment="center" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="zsd-lh-juk">
-                                <rect key="frame" x="157.5" y="355.5" width="60" height="20"/>
+                                <rect key="frame" x="155.5" y="363.5" width="64" height="24"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="csh-6q-boS"/>
-                                    <constraint firstAttribute="height" constant="20" id="rOR-ko-X7X"/>
+                                    <constraint firstAttribute="height" constant="24" id="NnD-Wo-Ce7"/>
+                                    <constraint firstAttribute="width" constant="64" id="csh-6q-boS"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="hexColorCodeChanged:" destination="RLj-3u-LfD" eventType="editingChanged" id="eSs-tV-WGP"/>
@@ -69,7 +69,7 @@
                             <constraint firstItem="7gE-ab-FVX" firstAttribute="trailing" secondItem="QSp-SZ-axs" secondAttribute="trailing" id="ivm-ko-lMp"/>
                             <constraint firstItem="7gE-ab-FVX" firstAttribute="trailing" secondItem="v1e-79-rui" secondAttribute="trailing" constant="32" id="kNJ-ML-PbS"/>
                             <constraint firstItem="QSp-SZ-axs" firstAttribute="leading" secondItem="7gE-ab-FVX" secondAttribute="leading" id="oQO-a4-toM"/>
-                            <constraint firstItem="zsd-lh-juk" firstAttribute="centerY" secondItem="z3v-Ye-MXf" secondAttribute="centerY" constant="32" id="oof-UX-C4V"/>
+                            <constraint firstItem="zsd-lh-juk" firstAttribute="centerY" secondItem="v1e-79-rui" secondAttribute="centerY" constant="32" id="oof-UX-C4V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7gE-ab-FVX"/>
                     </view>
