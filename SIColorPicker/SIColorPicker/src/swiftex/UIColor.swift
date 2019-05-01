@@ -2,21 +2,6 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    // MARK: - app colors
-    static let primary: UIColor = UIColor(red:0.00, green:0.45, blue:0.61, alpha:1.0)
-    
-    static let accent: UIColor = UIColor(red:1.00, green:0.67, blue:0.25, alpha:1.0)
-    
-    static let error: UIColor = UIColor(red:0.94, green:0.33, blue:0.31, alpha:1.0)
-    
-    // MARK: - task colors
-    static let none = UIColor(red:0.38, green:0.38, blue:0.38, alpha:1.0)
-    static let low = UIColor(red:0.22, green:0.56, blue:0.24, alpha:1.0)
-    static let medium = UIColor(red:0.96, green:0.49, blue:0.00, alpha:1.0)
-    static var high = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
-    
-    static let lightBackground = UIColor(red:0.89, green:0.89, blue:0.89, alpha:1.0)
-    
     var contrastFontColor: UIColor {
         var red = CGFloat(0), green = CGFloat(0), blue = CGFloat(0), alpha = CGFloat(0)
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)
