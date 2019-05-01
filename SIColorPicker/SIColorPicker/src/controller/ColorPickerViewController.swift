@@ -1,11 +1,3 @@
-//
-//  ColorPickerViewController.swift
-//  Cosprops App
-//
-//  Created by Sebastian on 09.10.18.
-//  Copyright © 2018 Sebastian Barz. All rights reserved.
-//
-
 import UIKit
 
 public class ColorPickerViewController: UIViewController {
@@ -19,6 +11,7 @@ public class ColorPickerViewController: UIViewController {
     
     // MARK: - properties
     internal var hexTextFieldCenter: CGPoint!
+    public var colorDelegate: ColorPickerResultDelegate?
     
     // MARK: - preconfigure options
     var defaultColor: UIColor?
@@ -26,15 +19,6 @@ public class ColorPickerViewController: UIViewController {
     var followUpViewController: UIViewController?
     var selectedColor: UIColor {
         return colorPickerView.color
-    }
-    
-    // MARK: - segue handling
-    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        if var resultDelegate = segue.destination as? ColorPickerResultDelegate {
-            resultDelegate.selectedColor = selectedColor
-        }
     }
     
     // MARK: - bar actions
@@ -53,6 +37,7 @@ public class ColorPickerViewController: UIViewController {
     // MARK: - color picker callback
     private func updateColor(_ color: UIColor) {
         colorHexTextField.text = "#\(color.hexString)"
+        colorDelegate?.selectedColor = color
     }
     
     // MARK: - ib actions
@@ -77,8 +62,6 @@ public class ColorPickerViewController: UIViewController {
             }
         }
         
-        print("Hex code change end")
-        
         UIView.animate(withDuration: 0.25) {
             sender.transform = CGAffineTransform.identity
         }
@@ -87,7 +70,6 @@ public class ColorPickerViewController: UIViewController {
     }
     
     @IBAction func hexColorCodeEditBegin(_ sender: UITextField) {
-        print("Hex code change begin")
         sender.becomeFirstResponder()
     }
 }
@@ -172,8 +154,6 @@ extension ColorPickerViewController {
             
             self.blurView.alpha = 0.6
             self.colorHexTextField.transform = scaleTransform.concatenating(translateTransform)
-        }, completion: { _ in
-//            self.textFieldYConstraint.constant = self.colorHexTextField.center.y - self.view.bounds.centerY
         })
     }
     
@@ -183,7 +163,6 @@ extension ColorPickerViewController {
             self.colorHexTextField.transform = CGAffineTransform.identity
             }, completion: { _ in
                 self.blurView.isHidden = true
-//                self.textFieldYConstraint.constant = 32
         })
     }
 }

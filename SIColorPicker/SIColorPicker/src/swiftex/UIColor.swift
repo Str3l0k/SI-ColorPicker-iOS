@@ -1,11 +1,3 @@
-//
-//  UIColor.swift
-//  Cosprops Dash
-//
-//  Created by Sebastian on 23.08.18.
-//  Copyright © 2018 Sebastian Barz. All rights reserved.
-//
-
 import Foundation
 import UIKit
 

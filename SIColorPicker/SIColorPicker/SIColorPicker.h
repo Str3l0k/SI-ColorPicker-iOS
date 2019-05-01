@@ -1,11 +1,3 @@
-//
-//  SIColorPicker.h
-//  SIColorPicker
-//
-//  Created by Sebastian on 10.03.19.
-//  Copyright © 2019 Sebastian Barz. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for SIColorPicker.

@@ -1,11 +1,3 @@
-//
-//  ColorPickerTouchProcessor.swift
-//  Cosprops App
-//
-//  Created by Sebastian on 11.10.18.
-//  Copyright © 2018 Sebastian Barz. All rights reserved.
-//
-
 import UIKit
 
 // MARK: - precalculated constants

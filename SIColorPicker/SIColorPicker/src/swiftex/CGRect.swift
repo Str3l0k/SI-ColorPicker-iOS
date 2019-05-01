@@ -1,11 +1,3 @@
-//
-//  CGRect.swift
-//  Cosprops App
-//
-//  Created by Sebastian on 08.10.18.
-//  Copyright © 2018 Sebastian Barz. All rights reserved.
-//
-
 import UIKit
 
 extension CGRect {
