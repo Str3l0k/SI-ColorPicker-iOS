@@ -218,6 +218,7 @@ extension ColorPickerView {
     }
 }
 
+// MARK: - angle calculations
 extension ColorPickerView {
     internal func calculateColorAngle(_ hue: CGFloat) -> CGFloat {
         let radians = 2 * .pi - rad(from: hue * 360)
@@ -239,7 +240,7 @@ extension ColorPickerView {
     }
 }
 
-// MARK: - user input controls
+// MARK: - user input control update
 extension ColorPickerView {
     internal func positionSaturationControl(_ saturation: CGFloat, _ angle: CGFloat, _ moving: Bool) {
         var actualAngle = angle

@@ -8,26 +8,14 @@
 
 import UIKit
 
-internal enum TouchPosition {
-    case controlCircle(mode: ControlMode)
-    case colorCircle(angle: CGFloat)
-    case hexField
-    case previewCircle
-    case none
-}
-
-internal enum ControlMode {
-    case saturation(angle: CGFloat)
-    case brightness(angle: CGFloat)
-    case none
-}
-
+// MARK: - precalculated constants
 internal let piDouble: CGFloat = CGFloat(2 * Double.pi)
 internal let piAndThreeQuarterPi: CGFloat = .pi * 1.75
 internal let piThreeQuarter: CGFloat = .pi * 0.75
 internal let piHalf: CGFloat = .pi * 0.5
 internal let piQuarter: CGFloat = .pi * 0.25
 
+// MARK: - touch processor class
 class ColorPickerTouchProcessor {
     
     internal let parentView: UIView
@@ -174,7 +162,7 @@ extension ColorPickerTouchProcessor {
         return rad < 0 ? piDouble + rad : rad
     }
     
-    private func determineControlMode(from: CGPoint, to: CGPoint) -> ControlMode {
+    private func determineControlMode(from: CGPoint, to: CGPoint) -> TouchControlMode {
         let angle = calculateAngle(from: from, to: to)
         
         if !saturationAngleRange.contains(angle) {
