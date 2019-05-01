@@ -17,7 +17,11 @@ A premade demonstation application is also included seperately. I uses a minimal
 - iPhone support for all orientations
 
 # Preview
-![Sample Video](ColorPickerDemo.mp4)
+<p align="center">
+  <img width="200" src="./img/colorpicker_0.png">
+  <img width="200" src="./img/colorpicker_preview.png">
+  <img width="200" src="./img/colorpicker_hex_input.png">
+</p>
 
 # TODO
 
