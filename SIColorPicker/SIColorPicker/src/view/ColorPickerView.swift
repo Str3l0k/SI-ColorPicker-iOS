@@ -291,10 +291,6 @@ extension ColorPickerView {
     internal func togglePreview() {
         let scale = self.preview ? 1 : colorGradientImageView.bounds.width / colorPreviewView.frame.width
         self.animating = true
-        
-        CATransaction.begin()
-        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
-        
         self.preview.toggle()
         
         UIView.animate(withDuration: 0.25, animations: {
@@ -303,11 +299,6 @@ extension ColorPickerView {
             self.colorPreviewLayer.lineWidth = 2 / scale
             self.colorSelectionThumbView.alpha = self.preview ? 0 : 1
         })
-        
-        CATransaction.setCompletionBlock({
-            self.animating = false
-        })
-        CATransaction.commit()
     }
 }
 
