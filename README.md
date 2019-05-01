@@ -17,6 +17,7 @@ A premade demonstation application is also included seperately. I uses a minimal
 - iPhone support for all orientations
 
 # Preview
+![Sample Video](ColorPickerDemo.mp4)
 
 # TODO
 
