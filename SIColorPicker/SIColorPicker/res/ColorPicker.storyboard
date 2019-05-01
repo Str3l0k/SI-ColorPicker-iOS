@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RLj-3u-LfD">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RLj-3u-LfD">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,26 +14,45 @@
         <scene sceneID="JIn-dV-qUZ">
             <objects>
                 <viewController title="ColorPickerViewController" id="RLj-3u-LfD" customClass="ColorPickerViewController" customModule="SIColorPicker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="z3v-Ye-MXf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="z3v-Ye-MXf">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1e-79-rui" customClass="ColorPickerView" customModule="SIColorPicker" customModuleProvider="target">
-                                <rect key="frame" x="32" y="141.5" width="311" height="404"/>
+                                <rect key="frame" x="128" y="-105" width="768" height="998"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="v1e-79-rui" secondAttribute="height" multiplier="1:1.3" id="WgT-fW-se9"/>
+                                    <constraint firstAttribute="width" secondItem="v1e-79-rui" secondAttribute="height" multiplier="1.3:1" id="TRA-ij-PAq">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="1"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="v1e-79-rui" secondAttribute="height" multiplier="1:1.3" id="u1J-yd-hEa"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TRA-ij-PAq"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="TRA-ij-PAq"/>
+                                        <exclude reference="u1J-yd-hEa"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="u1J-yd-hEa"/>
+                                    </mask>
+                                </variation>
                             </view>
-                            <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSp-SZ-axs">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QSp-SZ-axs">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8r9-5h-5u2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,7 +60,7 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="#FFFFFF" borderStyle="roundedRect" placeholder="color code" textAlignment="center" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="zsd-lh-juk">
-                                <rect key="frame" x="155.5" y="363.5" width="64" height="24"/>
+                                <rect key="frame" x="480" y="414" width="64" height="24"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="NnD-Wo-Ce7"/>
@@ -61,25 +80,63 @@
                         <color key="backgroundColor" red="0.57230675220489502" green="0.55516265498267281" blue="0.63342328866322839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="0.6705882353" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="zsd-lh-juk" firstAttribute="centerX" secondItem="v1e-79-rui" secondAttribute="centerX" id="3XQ-0X-nzz"/>
+                            <constraint firstItem="7gE-ab-FVX" firstAttribute="centerX" secondItem="v1e-79-rui" secondAttribute="centerX" id="3XQ-0X-nzz">
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="QSp-SZ-axs" firstAttribute="top" secondItem="7gE-ab-FVX" secondAttribute="top" id="9v8-Xk-Yg8"/>
                             <constraint firstItem="v1e-79-rui" firstAttribute="centerY" secondItem="7gE-ab-FVX" secondAttribute="centerY" id="BNE-mz-lUN"/>
-                            <constraint firstItem="v1e-79-rui" firstAttribute="leading" secondItem="7gE-ab-FVX" secondAttribute="leading" constant="32" id="CCb-AK-3Lz"/>
+                            <constraint firstItem="v1e-79-rui" firstAttribute="leading" secondItem="7gE-ab-FVX" secondAttribute="leading" constant="32" id="CCb-AK-3Lz">
+                                <variation key="heightClass=regular-widthClass=regular" constant="128"/>
+                            </constraint>
+                            <constraint firstItem="v1e-79-rui" firstAttribute="top" secondItem="z3v-Ye-MXf" secondAttribute="top" id="DgL-cu-4qh">
+                                <variation key="heightClass=compact-widthClass=compact" constant="16"/>
+                            </constraint>
                             <constraint firstItem="7gE-ab-FVX" firstAttribute="bottom" secondItem="QSp-SZ-axs" secondAttribute="bottom" id="bXL-VB-okg"/>
                             <constraint firstItem="7gE-ab-FVX" firstAttribute="trailing" secondItem="QSp-SZ-axs" secondAttribute="trailing" id="ivm-ko-lMp"/>
-                            <constraint firstItem="7gE-ab-FVX" firstAttribute="trailing" secondItem="v1e-79-rui" secondAttribute="trailing" constant="32" id="kNJ-ML-PbS"/>
+                            <constraint firstItem="7gE-ab-FVX" firstAttribute="trailing" secondItem="v1e-79-rui" secondAttribute="trailing" constant="32" id="kNJ-ML-PbS">
+                                <variation key="heightClass=regular-widthClass=regular" constant="128"/>
+                            </constraint>
+                            <constraint firstAttribute="bottom" secondItem="v1e-79-rui" secondAttribute="bottom" constant="16" id="lPk-R8-sxr"/>
                             <constraint firstItem="QSp-SZ-axs" firstAttribute="leading" secondItem="7gE-ab-FVX" secondAttribute="leading" id="oQO-a4-toM"/>
                             <constraint firstItem="zsd-lh-juk" firstAttribute="centerY" secondItem="v1e-79-rui" secondAttribute="centerY" constant="32" id="oof-UX-C4V"/>
+                            <constraint firstItem="zsd-lh-juk" firstAttribute="centerX" secondItem="z3v-Ye-MXf" secondAttribute="centerX" id="sa0-pG-A4N">
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                            </constraint>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7gE-ab-FVX"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DgL-cu-4qh"/>
+                                <exclude reference="lPk-R8-sxr"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="kNJ-ML-PbS"/>
+                                <exclude reference="BNE-mz-lUN"/>
+                                <exclude reference="CCb-AK-3Lz"/>
+                                <include reference="DgL-cu-4qh"/>
+                                <include reference="lPk-R8-sxr"/>
+                                <include reference="sa0-pG-A4N"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="BNE-mz-lUN"/>
+                                <include reference="DgL-cu-4qh"/>
+                                <include reference="lPk-R8-sxr"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Pick a color" id="ANU-1c-JJz">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" image="ic_close" id="rPq-Tc-LUA">
+                    <navigationItem key="navigationItem" title="ColorPicker " id="ANU-1c-JJz">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="rPq-Tc-LUA">
+                            <color key="tintColor" red="0.0" green="0.44705882349999998" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="closeAction:" destination="RLj-3u-LfD" id="t40-8R-1Cr"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Select" id="azs-cX-I1D">
+                            <color key="tintColor" red="0.0" green="0.44705882349999998" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="selectAction:" destination="RLj-3u-LfD" id="ddK-At-og5"/>
                             </connections>
@@ -97,7 +154,4 @@
             <point key="canvasLocation" x="96" y="-338"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ic_close" width="24" height="24"/>
-    </resources>
 </document>

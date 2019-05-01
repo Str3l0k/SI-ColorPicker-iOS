@@ -239,7 +239,7 @@ extension ColorPickerView {
     }
 }
 
-// MARK: - position thumb controls
+// MARK: - user input controls
 extension ColorPickerView {
     internal func positionSaturationControl(_ saturation: CGFloat, _ angle: CGFloat, _ moving: Bool) {
         var actualAngle = angle
@@ -289,7 +289,7 @@ extension ColorPickerView {
     }
     
     internal func togglePreview() {
-        let scale = self.preview ? 1 : self.bounds.width / self.colorPreviewView.bounds.width
+        let scale = self.preview ? 1 : colorGradientImageView.bounds.width / colorPreviewView.frame.width
         self.animating = true
         
         CATransaction.begin()

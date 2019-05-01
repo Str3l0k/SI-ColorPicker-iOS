@@ -10,8 +10,6 @@ import UIKit
 import SIColorPicker
 
 class ViewController: UINavigationController {
-    @IBOutlet weak var containerView: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
